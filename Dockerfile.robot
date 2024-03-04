@@ -14,3 +14,6 @@ RUN cd ros2_drivers &&\
 RUN cd ros2_drivers &&\
     . /opt/ros/humble/setup.sh &&\
     colcon build
+
+RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+RUN echo "source ros2_drivers/install/setup.bash" >> ~/.bashrc
