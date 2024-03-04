@@ -11,6 +11,8 @@ RUN cd ros2_drivers &&\
     rosdep update &&\
     rosdep install --from-paths src --ignore-src -r -y
 
+COPY config/lidar_config.yaml /ros2_drivers/src/ouster/ros2_ouster/params/driver_config.yaml
+
 RUN cd ros2_drivers &&\
     . /opt/ros/humble/setup.sh &&\
     colcon build
