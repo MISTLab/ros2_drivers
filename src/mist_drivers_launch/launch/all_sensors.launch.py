@@ -48,15 +48,11 @@ def launch_setup(context, *args, **kwargs):
                       arguments="0.0679 -0.073 0.342 3.14159 0 3.14159 base_link vectornav".split(" "),
                       parameters=[])
 
-    zenoh_dds_brigde_process = ExecuteProcess(
-                        cmd=['zenoh-bridge-dds', '-c', os.path.join(get_package_share_directory('mist_drivers_launch'), 'config', 'zenoh_config.json5')]
-                    )
     
     # Launch schedule
     schedule = []
 
     schedule.append(SetEnvironmentVariable('ROS_DOMAIN_ID',  LaunchConfiguration('robot_id').perform(context)))
-    schedule.append(zenoh_dds_brigde_process)
      
     schedule.append(PushLaunchConfigurations())
     schedule.append(camera_proc)

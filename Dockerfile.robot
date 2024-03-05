@@ -18,7 +18,7 @@ RUN cd ros2_drivers &&\
 RUN echo "deb [trusted=yes] https://download.eclipse.org/zenoh/debian-repo/ /" | tee -a /etc/apt/sources.list > /dev/null &&\
     apt-get update && apt-get install -y zenoh-plugin-ros2dds
 
-COPY src/mist_drivers_launch/config/lidar_config.yaml /ros2_drivers/src/ouster/ros2_ouster/params/driver_config.yaml
+COPY config/lidar_config.yaml /ros2_drivers/src/ouster/ros2_ouster/params/driver_config.yaml
 
 RUN cd ros2_drivers &&\
     . /opt/ros/humble/setup.sh &&\
