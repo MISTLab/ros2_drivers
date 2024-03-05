@@ -36,6 +36,8 @@ def launch_setup(context, *args, **kwargs):
     # Launch schedule
     schedule = []
 
+    schedule.append(SetEnvironmentVariable('ROS_DOMAIN_ID',  LaunchConfiguration('robot_id').perform(context)))
+     
     schedule.append(PushLaunchConfigurations())
     schedule.append(sensors)
     schedule.append(PopLaunchConfigurations())   

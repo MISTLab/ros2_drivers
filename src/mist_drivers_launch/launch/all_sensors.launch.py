@@ -47,7 +47,6 @@ def launch_setup(context, *args, **kwargs):
                       executable="static_transform_publisher",
                       arguments="0.0679 -0.073 0.342 3.14159 0 3.14159 base_link vectornav".split(" "),
                       parameters=[])
-
     
     # Launch schedule
     schedule = []
