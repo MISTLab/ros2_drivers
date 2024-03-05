@@ -3,6 +3,8 @@ FROM ros:humble-perception
 RUN apt-get update
 RUN apt-get install python3-pip python3-vcstool -y
 
+ADD https://api.github.com/repos/MISTLab/ros2_drivers/commits?per_page=1 head_ros2_drivers
+
 RUN git clone https://github.com/MISTLab/ros2_drivers.git &&\
     cd ros2_drivers &&\
     vcs import src < robot.repos
