@@ -17,3 +17,9 @@ kill:
 
 attach:
 	docker exec -it ros2_drivers bash
+
+sensors:
+	docker exec -it ros2_drivers ros2 launch mist_drivers_launch sensors.launch.py
+
+swarmslam-lidar:
+	docker exec -it ros2_drivers ros2 launch mist_drivers_launch swarmslam_lidar_odom.launch.py
