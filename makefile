@@ -20,7 +20,7 @@ attach:
 	docker exec -it ros2_drivers bash
 
 sensors:
-	docker exec -it ros2_drivers bash -c "source /opt/ros/humble/setup.bash; source ros2_drivers/install/setup.bash; ros2 launch mist_drivers_launch sensors.launch.py robot_id:=$(ROBOT_ID)"
+	docker exec -it ros2_drivers bash -c "source /opt/ros/humble/setup.bash; source ros2_drivers/install/setup.bash; ros2 launch mist_drivers_launch all_sensors.launch.py robot_id:=$(ROBOT_ID)"
 
 swarmslam-lidar:
 	docker exec -it ros2_drivers bash -c "source /opt/ros/humble/setup.bash; source ros2_drivers/install/setup.bash; ros2 launch mist_drivers_launch swarmslam_lidar_odom.launch.py robot_id:=$(ROBOT_ID)"

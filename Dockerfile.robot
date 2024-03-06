@@ -3,6 +3,8 @@ FROM ros:humble-perception
 RUN apt-get update
 RUN apt-get install python3-pip python3-vcstool -y
 
+RUN apt-get install -y ros-humble-rtabmap-*
+
 ADD https://api.github.com/repos/MISTLab/ros2_drivers/commits?per_page=1 head_ros2_drivers
 
 RUN git clone https://github.com/MISTLab/ros2_drivers.git &&\
